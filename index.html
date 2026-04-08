@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Quejas UPAP</title>
+    <link rel="stylesheet" href="EstilosIndex.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img class="img" src="Imagen/Universidad Politecnica de Apodaca-01.avif" alt="Logo UPAP">
+            <h1>Sistema de Quejas</h1>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="bienvenida">
+            <h2>Bienvenido al Apartado de Quejas UPAP</h2>
+            <p>Tu voz cuenta. Registra aquí cualquier inconformidad.</p>
+        </div>
+
+        <div class="card-formulario">
+            <form action="bd_quejas_upap.php" method="POST">
+
+                <div class="grupo-input">
+                    <label>¿Quién realiza el reporte?</label>
+                    <select name="rol" required>
+                        <option value="alumno">Alumno</option>
+                        <option value="docente">Docente / Administrativo</option>
+                        <option value="externo">Externo</option>
+                    </select>
+                </div>
+
+                <div class="grupo-input">
+                    <label>Correo Institucional:</label>
+                    <input type="email" name="correo" required 
+                    pattern=".+@upapnl\.edu\.mx"
+                    placeholder="usuario@upapnl.edu.mx">
+                </div>
+
+                <div class="grupo-input">
+                    <label>Tipo de Inconformidad:</label>
+                    <select name="tipo" required>
+                        <option value="infraestructura">Infraestructura</option>
+                        <option value="administrativo">Administrativo</option>
+                        <option value="academico">Académico</option>
+                    </select>
+                </div>
+
+                <div class="grupo-input">
+                    <label>Descripción:</label>
+                    <textarea name="descripcion" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Enviar Reporte</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
